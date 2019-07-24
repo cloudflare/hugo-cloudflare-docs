@@ -1,9 +1,10 @@
 {
   "name": "@cloudflare/hugo-cloudflare-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This repository contains the assets shared between Cloudflare Docs projects. At its core it is the theme resources, and shared code used by the build process.",
   "scripts": {
-    "start": "cd exampleSite; ../start"
+    "start": "cd exampleSite; ../start",
+    "postinstall": "gulp build"
   },
   "license": "UNLICENSED",
   "repository": {
