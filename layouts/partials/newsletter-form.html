@@ -1,0 +1,83 @@
+<style>
+  .newsletter .visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  .newsletter form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .newsletter input[type="email"], .newsletter button[type="submit"] {
+    font: inherit;
+    line-height: 1.5;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-radius: 3px;
+  }
+
+  .newsletter input[type="email"] {
+    padding-left: .8em;
+    padding-right: .8em;
+    margin: 0;
+    margin-right: .5em;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .newsletter input[type="email"]:focus {
+    border: 1px solid #3279b3;
+  }
+
+  .newsletter button[type="submit"] {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    background-color: #f18030;
+    color: #fff;
+  }
+
+  .newsletter .privacy-link {
+    font-size: .9em;
+  }
+</style>
+
+<div class="newsletter">
+  <form id="newsletterForm">
+    <label class="visually-hidden" for="newsletterFormEmail">Email</label>
+    <input id="newsletterFormEmail" type="email" placeholder="Email" required/>
+    <button type="submit">Submit</button>
+  </form>
+  <a class="privacy-link" href="https://www.cloudflare.com/privacypolicy/">Your privacy is important to us</a>
+</div>
+
+<script>
+  newsletterForm.addEventListener('submit', async function(e) {
+    e.preventDefault()
+
+    fetch('https://streamblog.website', {
+      method: 'POST',
+      body: newsletterForm.elements[0].value
+    }).then(async res => {
+      const thing = await res.text()
+      newsletterForm.innerHTML = thing
+
+      const homeURL = 'https://developers.cloudflare.com/'
+      if (window.location.href !== homeURL) {
+        window.setTimeout(_ => {
+          window.location = homeURL
+        }, 5000)
+      }
+    })
+  })
+</script>

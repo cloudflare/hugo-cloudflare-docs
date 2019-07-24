@@ -1,0 +1,36 @@
+.stripe {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.stripe:not(.is-top-abutted) {
+  padding-top: 4rem;
+}
+.stripe:not(.is-bottom-abutted) {
+  padding-bottom: 4rem;
+}
+@media (max-width: 48em) {
+  .stripe:not(.is-top-abutted) {
+    padding-top: 2rem;
+  }
+  .stripe:not(.is-bottom-abutted) {
+    padding-bottom: 2rem;
+  }
+}
+.stripe .content {
+  max-width: 100%;
+}
+.stripe .content > h2:first-child {
+  margin-top: 0;
+}
+.stripe .stripe-figure {
+  width: 80%;
+}
+.stripe .actions {
+  display: flex;
+  justify-content: center;
+}
+.stripe .actions > *:not(:last-child) {
+  margin-right: 1rem;
+}

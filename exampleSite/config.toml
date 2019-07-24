@@ -1,0 +1,40 @@
+baseURL = "/"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+
+title = "Cloudflare"
+theme = "hugo-cloudflare-docs"
+themesdir = "../.."
+
+[params]
+editURL = "https://github.com/cloudflare-design/hugo-cloudflare-docs"
+noHomeIcon = false # default is false
+showVisitedLinks = true # default is false
+ordersectionsby = "weight" # ordersectionsby = "title"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "Github repo"
+identifier = "ds"
+url = "https://github.com/cloudflare-design/hugo-cloudflare-docs"
+weight = 10
+
+[[menu.shortcuts]]
+name = "Showcases"
+url = "/showcase"
+weight = 11
+
+[[menu.shortcuts]]
+name = "Hugo Documentation"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 20
+
+[[menu.shortcuts]]
+name = " Credits"
+url = "/credits"
+weight = 30

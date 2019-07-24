@@ -1,0 +1,98 @@
+.sponsorship-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+@media (max-width: 420px) {
+  .sponsorship-grid {
+    margin-left: -1em;
+    margin-right: -1em;
+  }
+}
+.sponsorship-grid .sponsorship {
+  display: flex;
+  flex-flow: column;
+  width: 16em;
+  text-align: left;
+  margin: 0.75em;
+  background: #f6f6f6;
+  text-decoration: none;
+}
+@media (max-width: 48em) {
+  .sponsorship-grid .sponsorship {
+    font-size: 0.8em;
+    width: 14em;
+  }
+}
+@media (max-width: 420px) {
+  .sponsorship-grid .sponsorship {
+    width: auto;
+    font-size: 0.95em;
+  }
+}
+.sponsorship-grid .sponsorship .sponsorship-icon {
+  position: relative;
+}
+.sponsorship-grid .sponsorship .sponsorship-icon::after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 100%;
+  padding-bottom: 66%;
+}
+.sponsorship-grid .sponsorship .sponsorship-icon:hover {
+  opacity: 0.8;
+}
+.sponsorship-grid .sponsorship .sponsorship-icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6em;
+  width: 6em;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.sponsorship-grid .sponsorship .sponsorship-title {
+  display: block;
+  padding: 0 1.5em;
+}
+.sponsorship-grid .sponsorship .sponsorship-title > h3 {
+  font-weight: 500;
+  margin: 0;
+}
+@media (max-width: 48em) {
+  .sponsorship-grid .sponsorship .sponsorship-title > h3 {
+    font-size: 1.25em;
+  }
+}
+.sponsorship-grid .sponsorship .sponsorship-title:not(:hover) {
+  color: inherit;
+}
+.sponsorship-grid .sponsorship .sponsorship-description {
+  padding: 0.5em 1.5em;
+}
+.sponsorship-grid .sponsorship .sponsorship-description > *:last-child {
+  margin-bottom: 0;
+}
+.sponsorship-grid .sponsorship .sponsorship-links {
+  margin-top: auto;
+  padding-bottom: 1.125em;
+}
+.sponsorship-grid .sponsorship .sponsorship-links > a {
+  padding: 0.375em 1.5em;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 500;
+}
+.sponsorship-grid .sponsorship .sponsorship-links > a:hover {
+  background: #3279b3;
+  color: #fff;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@cloudflare/hugo-cloudflare-docs",
+  "version": "1.0.0",
+  "description": "This repository contains the assets shared between Cloudflare Docs projects. At its core it is the theme resources, and shared code used by the build process.",
+  "scripts": {
+    "start": "cd exampleSite; ../start"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudflare/hugo-cloudflare-docs"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.3.1",
+    "beeper": "^1.1.1",
+    "concurrently": "^4.0.1",
+    "fancy-log": "^1.3.2",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-if": "^2.0.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-stylus": "^2.7.0",
+    "nib": "^1.0.2"
+  }
+}

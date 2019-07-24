@@ -1,0 +1,19 @@
+.browser-mock {
+  background: #bcbec0;
+  border-radius: 4px;
+  padding: 2rem 2px 2px 2px;
+}
+.browser-mock .screenshot {
+  background: #fff;
+  position: relative;
+}
+.browser-mock .screenshot img {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.browser-mock .screenshot .spacer {
+  height: 0;
+  padding-bottom: 50%;
+}

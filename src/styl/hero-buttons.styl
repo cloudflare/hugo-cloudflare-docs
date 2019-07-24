@@ -1,0 +1,60 @@
+.hero-buttons-column
+  width 80%
+
+  @media (max-width 48em)
+    width 100%
+    max-width 100%
+
+  @media (min-width 48em)
+    max-width 1100px
+
+.hero-buttons
+  // TODO - import colors from APPS/UI? move to DESIGN/UI?
+  standardGutterSize = 24px
+  cloudFlarePrimaryBrandOrange = #f38020
+  lightGray = #f3f3f3
+
+  display flex
+  justify-content center
+  flex-wrap wrap
+  margin 0
+
+  @media (max-width 420px)
+    margin-left -1em
+    margin-right -1em
+
+  a.hero-button
+    border-radius 3px
+    text-align center
+    padding standardGutterSize standardGutterSize (.875 * standardGutterSize)
+    margin (standardGutterSize / 2)
+    white-space nowrap
+    background lightGray
+    border 1px solid rgba(0, 0, 0, .1)
+    border-bottom-color rgba(0, 0, 0, .2)
+    text-decoration none
+    font-weight 500
+    color #66686a
+
+    &:hover
+      background #fafafa
+      color inherit
+
+      &:active
+        border-color rgba(0, 0, 0, .1)
+        border-top-color rgba(0, 0, 0, .2)
+        background darken(lightGray, 5%)
+
+    svg
+      display block
+      width 200px
+      height 90px
+      margin -5px auto 10px
+      fill currentColor
+
+    &:not(:hover) svg
+      fill #8d8e91
+
+    @media (max-width 48em)
+      &.more::after
+        display none

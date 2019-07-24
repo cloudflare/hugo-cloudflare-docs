@@ -1,0 +1,63 @@
+.hero-buttons-column {
+  width: 80%;
+}
+@media (max-width: 48em) {
+  .hero-buttons-column {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 48em) {
+  .hero-buttons-column {
+    max-width: 1100px;
+  }
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+@media (max-width: 420px) {
+  .hero-buttons {
+    margin-left: -1em;
+    margin-right: -1em;
+  }
+}
+.hero-buttons a.hero-button {
+  border-radius: 3px;
+  text-align: center;
+  padding: 24px 24px 21px;
+  margin: 12px;
+  white-space: nowrap;
+  background: #f3f3f3;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom-color: rgba(0,0,0,0.2);
+  text-decoration: none;
+  font-weight: 500;
+  color: #66686a;
+}
+.hero-buttons a.hero-button:hover {
+  background: #fafafa;
+  color: inherit;
+}
+.hero-buttons a.hero-button:hover:active {
+  border-color: rgba(0,0,0,0.1);
+  border-top-color: rgba(0,0,0,0.2);
+  background: #e7e7e7;
+}
+.hero-buttons a.hero-button svg {
+  display: block;
+  width: 200px;
+  height: 90px;
+  margin: -5px auto 10px;
+  fill: currentColor;
+}
+.hero-buttons a.hero-button:not(:hover) svg {
+  fill: #8d8e91;
+}
+@media (max-width: 48em) {
+  .hero-buttons a.hero-button.more::after {
+    display: none;
+  }
+}

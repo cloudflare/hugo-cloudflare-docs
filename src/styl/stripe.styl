@@ -1,0 +1,34 @@
+.stripe
+  display flex
+  justify-content center
+  padding-left 1rem
+  padding-right 1rem
+
+  &:not(.is-top-abutted)
+    padding-top 4rem
+
+  &:not(.is-bottom-abutted)
+    padding-bottom 4rem
+
+  @media (max-width 48em)
+    &:not(.is-top-abutted)
+      padding-top 2rem
+
+    &:not(.is-bottom-abutted)
+      padding-bottom 2rem
+
+  .content
+    max-width 100%
+
+    > h2:first-child
+      margin-top 0
+
+  .stripe-figure
+    width 80% // TODO
+
+  .actions
+    display flex
+    justify-content center
+
+    > *:not(:last-child)
+      margin-right 1rem

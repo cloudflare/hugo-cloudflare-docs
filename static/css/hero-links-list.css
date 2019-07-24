@@ -1,0 +1,17 @@
+ul.hero-links-list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+ul.hero-links-list li {
+  padding: 0;
+}
+ul.hero-links-list li > p {
+  margin: 0;
+}
+ul.hero-links-list li:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+ul.hero-links-list.hero-events-link-list li:not(:last-child) {
+  margin-bottom: 1em;
+}

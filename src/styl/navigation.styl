@@ -1,0 +1,81 @@
+// TODO - Remove/handle a different way
+body
+  padding-top 69px
+
+.navigation
+  navigationColorStripeHeight = 3px
+
+  position fixed
+  z-index 10
+  top 0
+  left 0
+  width 100%
+  display flex
+  align-items stretch
+  background #fff
+  box-shadow 0 1px rgba(0, 0, 0, .2)
+
+  &::before
+    content ""
+    position absolute
+    display block
+    height navigationColorStripeHeight
+    width 100%
+    background #f38020
+
+  > a
+    display flex
+    align-items center
+    padding 1rem
+    padding-top "calc(1rem + %s)" % navigationColorStripeHeight
+    font-size 13px
+    text-transform uppercase
+    letter-spacing .0625em
+    text-decoration none
+    font-weight 500
+
+    &:not(:hover)
+      color #808285
+
+    &:hover
+      background rgba(243, 128, 32, .1)
+      color #f38020
+
+      @media (min-width 48em)
+        box-shadow 0 1px #fbc99e // TODO
+
+    &.active
+      color #f38020
+
+    &:first-child
+      padding-left 2rem
+      padding-top 1rem
+
+    @media (max-width 47.938em)
+      padding-left .5rem
+      padding-right .5rem
+
+      &:first-child
+        padding-left 1rem
+
+      &:not(:nth-child(1)):not(:nth-child(2))
+        display none
+
+  .navigation-subbrand
+    font-weight 900
+
+  .logo
+    width 108px
+
+    svg
+      display block
+      width 100%
+      height 100%
+      margin auto
+
+:target:before
+  /* Fix scrolling to anchors */
+  content ""
+  display block
+  height 70px /* Fixed header height */
+  margin -70px 0 0

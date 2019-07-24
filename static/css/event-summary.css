@@ -1,0 +1,11 @@
+.event-summary-header {
+  display: flex;
+  font-size: 0.8em;
+}
+.event-summary-date {
+  text-transform: uppercase;
+}
+.event-summary-location {
+  padding-left: 1em;
+  opacity: 0.5;
+}

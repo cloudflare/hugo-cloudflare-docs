@@ -1,0 +1,37 @@
+{{/* NOTE: Hugo has limited support for variable scoping and looping. This is a work around these limitations. */}}
+
+{{ $.Scratch.Set "page" . }}
+{{ $.Scratch.Set "pagePresent" true }}
+
+{{/* Assuming there will never be more than 5 levels of page depth... */}}
+{{ range (slice 1 2 3 4 5) }}
+  {{ $page := $.Scratch.Get "page" }}
+
+  {{ if $.Scratch.Get "pagePresent" }}
+    {{ if $page.IsHome }}
+      {{ $.Scratch.Add "pageEntries" (slice (dict "id" $page.Permalink "name" $.Site.Title)) }}
+    {{ else }}
+      {{ $.Scratch.Add "pageEntries" (slice (dict "id" $page.Permalink "name" $page.Title)) }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $page.Parent }}
+    {{ $.Scratch.Set "page" $page.Parent }}
+  {{ else }}
+    {{ $.Scratch.Set "pagePresent" false }}
+  {{ end }}
+{{ end }}
+
+{{ $pageEntries := $.Scratch.Get "pageEntries" }}
+{{ $breadcrumbListLength := sub (len $pageEntries) 1 }}
+
+{{ range $listIndex, $_ := $pageEntries }}
+  {{ with (index $pageEntries (sub $breadcrumbListLength $listIndex)) }}
+    {{ $.Scratch.Add "itemListElement" (slice (dict "@type" "ListItem" "position" (add $listIndex 1) "item" (dict "@id" .id "name" .name))) }}
+  {{ end }}
+{{ end }}
+
+<script type="application/ld+json">
+  {{ dict "@context" "http://schema.org" "@type" "BreadcrumbList" "itemListElement" (.Scratch.Get "itemListElement") | jsonify }}
+</script>
+
