@@ -1,6 +1,6 @@
 {
   "name": "@cloudflare/hugo-cloudflare-docs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This repository contains the assets shared between Cloudflare Docs projects. At its core it is the theme resources, and shared code used by the build process.",
   "scripts": {
     "start": "cd exampleSite; ../start",
