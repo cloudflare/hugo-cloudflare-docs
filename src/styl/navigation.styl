@@ -28,14 +28,11 @@ body
     align-items center
     padding 1rem
     padding-top "calc(1rem + %s)" % navigationColorStripeHeight
-    font-size 13px
-    text-transform uppercase
-    letter-spacing .0625em
+    font-size 15px
     text-decoration none
-    font-weight 500
 
     &:not(:hover)
-      color #808285
+      color inherit
 
     &:hover
       background rgba(243, 128, 32, .1)
@@ -62,7 +59,9 @@ body
         display none
 
   .navigation-subbrand
-    font-weight 900
+    text-transform uppercase
+    letter-spacing .01em
+    font-weight 700
 
   .logo
     width 108px
