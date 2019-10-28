@@ -484,12 +484,36 @@ sidebarEntryHoverBorderColor = #fbc99e // TODO
     box-shadow 1px 0 rgba(0, 0, 0, .15)
 
   a
+    position relative
 
     &, &.subtitle
       color inherit
 
     &.padding
       padding 0 1rem
+
+    .triangle-down, .triangle-up
+      position absolute
+      display block
+      border-width 6px
+      top 0
+      bottom 0
+      margin-top auto
+      margin-bottom auto
+      opacity .35
+
+      @media (max-width 47.938em)
+        display none
+
+    .triangle-up
+      border-width 6px 6px 0 6px
+      border-color currentColor transparent transparent transparent
+      left .75rem
+
+    .triangle-down
+      border-width 6px 0 6px 6px
+      border-color transparent transparent transparent currentColor
+      left 1rem
 
   hr
     border-bottom 1px solid #2a232f
@@ -648,6 +672,12 @@ sidebarEntryHoverBorderColor = #fbc99e // TODO
         display none
         padding-bottom .5rem
 
+      li.docs-nav-item-header
+        display none
+
+        + li
+          margin-top .75em
+
       li.docs-nav-item-header a
         margin 0
         padding 1rem 1rem 1rem 2rem
@@ -659,8 +689,17 @@ sidebarEntryHoverBorderColor = #fbc99e // TODO
   ul.topics li.parent > ul, li.active > ul
     display block
 
-  ul.topics li.parent.always-open i.triangle-up
-    display none
+    &:empty
+      display none
+
+  // All child pages of template gallery are hidden from the sidebar
+  ul.topics li[data-nav-id="/templates/"]
+
+    .triangle-down, .triangle-up
+      display none
+
+    > ul
+      display none
 
   ul.topics > li > a
     font-size 16px
@@ -714,6 +753,9 @@ sidebarEntryHoverBorderColor = #fbc99e // TODO
 
     @media (max-width 47.938em)
       padding-left 2rem
+
+    .triangle-down, .triangle-up
+      margin-left 1.125rem
 
   ul li ul li ul li a
     padding-left 4rem

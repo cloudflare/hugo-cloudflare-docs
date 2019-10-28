@@ -65,7 +65,8 @@ body {
   font-weight: 700;
 }
 .navigation .logo {
-  width: 108px;
+  width: 140px;
+  height: 37px;
 }
 .navigation .logo svg {
   display: block;
