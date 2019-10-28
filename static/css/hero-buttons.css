@@ -1,5 +1,5 @@
 .hero-buttons-column {
-  width: 80%;
+  width: 90%;
 }
 @media (max-width: 48em) {
   .hero-buttons-column {
@@ -9,7 +9,7 @@
 }
 @media (min-width: 48em) {
   .hero-buttons-column {
-    max-width: 1100px;
+    max-width: 1200px;
   }
 }
 .hero-buttons {
@@ -30,12 +30,12 @@
   padding: 24px 24px 21px;
   margin: 12px;
   white-space: nowrap;
-  background: #f3f3f3;
+  background: #f3f3f4;
   border: 1px solid rgba(0,0,0,0.1);
   border-bottom-color: rgba(0,0,0,0.2);
   text-decoration: none;
   font-weight: 500;
-  color: #66686a;
+  color: inherit;
 }
 .hero-buttons a.hero-button:hover {
   background: #fafafa;
@@ -44,17 +44,17 @@
 .hero-buttons a.hero-button:hover:active {
   border-color: rgba(0,0,0,0.1);
   border-top-color: rgba(0,0,0,0.2);
-  background: #e7e7e7;
+  background: #e6e6e8;
 }
 .hero-buttons a.hero-button svg {
   display: block;
-  width: 200px;
+  width: 160px;
   height: 90px;
   margin: -5px auto 10px;
   fill: currentColor;
 }
 .hero-buttons a.hero-button:not(:hover) svg {
-  fill: #8d8e91;
+  fill: #404041;
 }
 @media (max-width: 48em) {
   .hero-buttons a.hero-button.more::after {

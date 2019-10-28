@@ -14,7 +14,7 @@
   text-indent: 0.09em;
   margin-top: 0;
   margin-bottom: 0.6em;
-  font-weight: 300;
+  font-weight: 400;
 }
 @media (max-width: 48em) {
   .hero h5 {
@@ -22,12 +22,11 @@
   }
 }
 .hero h1 {
-  letter-spacing: -0.02em;
-  text-indent: 0.02em;
   line-height: 1.2;
-  max-width: 20em;
+  max-width: 22em;
   margin: 0 auto 0.4em;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 2.5em;
 }
 @media (max-width: 48em) {
   .hero h1 {
@@ -42,7 +41,6 @@
   font-size: 1.3em;
   line-height: 1.5;
   margin-bottom: 1.5em;
-  color: #808285;
 }
 @media (max-width: 48em) {
   .hero p {
@@ -67,7 +65,7 @@
 .hero-block p {
   line-height: 1.5;
   margin-bottom: 1em;
-  color: #808285;
+  color: #646567;
 }
 .hero-block p:last-child {
   margin-bottom: 0;

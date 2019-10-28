@@ -25,14 +25,11 @@ body {
   align-items: center;
   padding: 1rem;
   padding-top: calc(1rem + 3px);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.0625em;
+  font-size: 15px;
   text-decoration: none;
-  font-weight: 500;
 }
 .navigation > a:not(:hover) {
-  color: #808285;
+  color: inherit;
 }
 .navigation > a:hover {
   background: rgba(243,128,32,0.1);
@@ -63,10 +60,13 @@ body {
   }
 }
 .navigation .navigation-subbrand {
-  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-weight: 700;
 }
 .navigation .logo {
-  width: 108px;
+  width: 140px;
+  height: 37px;
 }
 .navigation .logo svg {
   display: block;

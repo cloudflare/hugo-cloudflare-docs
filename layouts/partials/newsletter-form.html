@@ -1,83 +1,94 @@
 <style>
-  .newsletter .visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
+
+  /* These !important rules are necessary to override inline color and font-size attrs on elements generated from Marketo */
+  .newsletter form {
+    color: #646567 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    width: 100% !important;
   }
 
   .newsletter form {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    line-height: 1.5em;
     margin-bottom: 1em;
+    padding: 0;
   }
-
-  .newsletter input[type="email"], .newsletter button[type="submit"] {
+  
+  .newsletter input[type="Email"], .mktoForm.mktoHasWidth.mktoLayoutLeft .mktoButtonWrap.mktoSimple .mktoButton {
+    border-radius: 3px;
     font: inherit;
-    line-height: 1.5;
+    line-height: 1.5em;
     padding-top: .5em;
     padding-bottom: .5em;
-    border-radius: 3px;
   }
-
-  .newsletter input[type="email"] {
-    padding-left: .8em;
-    padding-right: .8em;
+  
+  .newsletter input[type="Email"] {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    height: initial;
     margin: 0;
     margin-right: .5em;
-    box-shadow: none;
-    border: 1px solid #ccc;
+    padding-left: .8em;
+    padding-right: .8em;
+    /* This !important is necessary to override inline width attrs on elements generated from Marketo */
+    width: 100% !important;
   }
-
-  .newsletter input[type="email"]:focus {
+  
+  .newsletter input[type="Email"]:focus {
     border: 1px solid #3279b3;
   }
-
-  .newsletter button[type="submit"] {
+  
+  .mktoForm.mktoHasWidth.mktoLayoutLeft .mktoButtonWrap.mktoSimple .mktoButton {
+    background-color: #f18030;
+    border: 1px solid #f18030;
+    color: #fff;
     padding-left: 1.25em;
     padding-right: 1.25em;
-    background-color: #f18030;
-    color: #fff;
   }
 
-  .newsletter .privacy-link {
-    font-size: .9em;
+  .mktoForm.mktoHasWidth.mktoLayoutLeft .mktoButtonWrap.mktoSimple .mktoButton:active {
+    /* Setting background instead of background-color to overwrite marketo's background-image default */
+    background: #f18030;
   }
+
+  .mktoForm .mktoButtonWrap.mktoSimple .mktoButton:hover {
+    border: 1px solid #f18030;
+  }
+  
+  .newsletter .privacy-link {
+    font-size: .8em;
+  }
+  
+  .mktoAsterix, .mktoGutter, .mktoLabel, .mktoOffset {
+    display: none;
+  }
+  
+  .mktoButtonWrap, .mktoFieldDescriptor {
+    /* This !important is necessary to override inline margin attrs on elements generated from Marketo */
+    margin: 0 !important;
+  }
+
+  .newsletter .mktoForm .mktoButtonRow {
+    margin-left: .5em;
+  }
+
+  .mktoFormRow:first-of-type, .mktoFormRow:first-of-type .mktoFieldDescriptor.mktoFormCol, .mktoFormRow:first-of-type .mktoFieldDescriptor.mktoFormCol .mktoFieldWrap.mktoRequiredField {
+    width: 100%;
+  }
+
 </style>
 
 <div class="newsletter">
-  <form id="newsletterForm">
-    <label class="visually-hidden" for="newsletterFormEmail">Email</label>
-    <input id="newsletterFormEmail" type="email" placeholder="Email" required/>
-    <button type="submit">Submit</button>
-  </form>
+  <script src="https://app-ab13.marketo.com/js/forms2/js/forms2.min.js"></script>
+  <form id="mktoForm_1654"></form>
+  <script>MktoForms2.loadForm("https://app-ab13.marketo.com", "713-XSC-918", 1654, function(form) {
+      form.onSuccess(function() {
+        mktoForm_1654.innerHTML = "Thank you! Your email has been added to our list."
+        return false
+      })
+    });</script>
   <a class="privacy-link" href="https://www.cloudflare.com/privacypolicy/">Your privacy is important to us</a>
 </div>
-
-<script>
-  newsletterForm.addEventListener('submit', async function(e) {
-    e.preventDefault()
-
-    fetch('https://streamblog.website', {
-      method: 'POST',
-      body: newsletterForm.elements[0].value
-    }).then(async res => {
-      const thing = await res.text()
-      newsletterForm.innerHTML = thing
-
-      const homeURL = 'https://developers.cloudflare.com/'
-      if (window.location.href !== homeURL) {
-        window.setTimeout(_ => {
-          window.location = homeURL
-        }, 5000)
-      }
-    })
-  })
-</script>

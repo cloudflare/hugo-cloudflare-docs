@@ -1,18 +1,18 @@
 .hero-buttons-column
-  width 80%
+  width 90%
 
   @media (max-width 48em)
     width 100%
     max-width 100%
 
   @media (min-width 48em)
-    max-width 1100px
+    max-width 1200px
 
 .hero-buttons
   // TODO - import colors from APPS/UI? move to DESIGN/UI?
   standardGutterSize = 24px
   cloudFlarePrimaryBrandOrange = #f38020
-  lightGray = #f3f3f3
+  lightGray = #f3f3f4
 
   display flex
   justify-content center
@@ -34,7 +34,7 @@
     border-bottom-color rgba(0, 0, 0, .2)
     text-decoration none
     font-weight 500
-    color #66686a
+    color inherit
 
     &:hover
       background #fafafa
@@ -47,13 +47,13 @@
 
     svg
       display block
-      width 200px
+      width 160px
       height 90px
       margin -5px auto 10px
       fill currentColor
 
     &:not(:hover) svg
-      fill #8d8e91
+      fill #404041
 
     @media (max-width 48em)
       &.more::after
